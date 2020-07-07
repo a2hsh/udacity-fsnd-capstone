@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Token</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        const fragment = window.location.hash.substr(1).split('&')[0].split('=');
+        // check if the fragment includes the access token
+        if (fragment[0] === 'access_token') {
+            // redirect to the token URL, with access_token as a parameter
+            let token = fragment[1];
+            location.href = `http://localhost:5000/token?access_token=${token}`
+        }
+    </script>
+</body>
+
+</html>
