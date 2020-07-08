@@ -1,0 +1,38 @@
+# env_example
+# an example file for environment variables
+
+# Auth 0 configuration variables
+# AUTH0_DOMAIN: the full auth0 domain
+AUTH0_DOMAIN='example.us.auth0.com'
+# AUTH0_AUDIENCE: the auth0 API audience
+AUTH0_AUDIENCE='example-audience'
+# AUTH0_CLIENT_ID: your auth0 client ID
+AUTH0_CLIENT_ID='example-client-id-xxx-xxxx'
+# AUTH0_CLIENT_SECRET: your Auth0 client secret
+AUTH0_CLIENT_SECRET='very-very-secretive-secret'
+# AUTH0_REDIRECT_URI: your auth0 redirect URI, which needs to be set in the application callback URL in the auth0 dashboard
+# note that the browser will redirect users to this URL after a successful login
+AUTH0_REDIRECT_URI='https://example.com/callback'
+
+# tokens
+# these tokens are required for conducting automated testing.
+# You need to login with an assistant user, a director user, and producer user, and get the required bearer tokens
+# ASSISTANT_TOKEN: the bearer token for the user with the assistant role
+ASSISTANT_TOKEN = 'eyJhbGciOiJSU...'
+# DIRECTOR_TOKEN: the bearer token for the user with the director role
+DIRECTOR_TOKEN = 'eyJhbGciOiJS...'
+# PRODUCER_TOKEN: the bearer token for the user with the producer role
+PRODUCER_TOKEN = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IklDMG5YdWJEY1lpM1p1czBSOFUxayJ9.eyJpc3MiOiJodHRwczovL2ZzbmQtYXV0aC1hMmgudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmMDJlMzkwMmViMzAzMDAxOWM4MzNhOCIsImF1ZCI6ImZzbmQtY2Fwc3RvbmUiLCJpYXQiOjE1OTQxNjQxOTAsImV4cCI6MTU5NDI1MDU5MCwiYXpwIjoiU1JEb2Rwa0g4MWJzMHVoeXNoSDJOakFTdndYU2l6TVkiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9yLWRldGFpbHMiLCJnZXQ6bW92aWUtZGV0YWlscyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIiwicG9zdDptb3ZpZXMiXX0.h4QxEMzP7zMR-pBzZGlykKwZeEJoTHeScw5KqCa79422XD-KJzFO3gVW1WQEEkGM90Hm3nfTwSL-7LFrMKSjoWRpePPstAw4xwmH_XV17lCaH6TdpsEw9HtlMZGtAtN6yIxiUPjaVFgJj-l0MjSRiBNc7vRYTVbfpTLia45k_Nrl91IWjTriMnJ9f4dNQ_QP6yShmKcxecMehRwgbNZnVfTrIfXzFBufqRMVfsmphnTX9BVWtgL7wGie99CnKSD05yudce1AAN4tkwT9JDd0Ip-AhwKouQJn9FJ6fYxIv5fWcsPZmUFrkzA8i9Re97JQYfwB-VgSWzcpJuxd1tTfGg'
+
+# flask config
+# possible choices are development, testing, or production
+FLASK_CONFIG = 'development'
+# secret key
+SECRET_KEY = 'gard-this-key-with-your-life'
+# development DB URI
+DEV_DATABASE_URI = 'postgresql://postgres:postgres@localhost:5432/capstone_dev'
+# testing DB URI
+TEST_DATABASE_URI = 'postgresql://postgres:postgres@localhost:5432/capstone_test'
+# to set a database for production, use the DATABASE_URL variable
+# use the full URI as stated above
+# this is set by default by Heroku
