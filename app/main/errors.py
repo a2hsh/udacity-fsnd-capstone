@@ -35,12 +35,3 @@ def internal_server_error(error):
     '''
 error handler for all other errors
 '''
-
-
-@main.errorhandler(Exception)
-def other_errors_handler(error):
-    return jsonify({
-        'success': False,
-        'code': error.code,
-        'message': error.name
-    }), error.code

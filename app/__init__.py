@@ -49,5 +49,14 @@ def create_app(config=environ.get('FLASK_CONFIG') or 'development'):
                 return request.args.get('access_token')
             else:
                 return render_template('token.html')
+        # force json errors for all endpoints
+        from werkzeug.exceptions import HTTPException
 
+        @app.errorhandler(Exception)
+        def other_errors_handler(error):
+            return jsonify({
+                'success': False,
+                'code': error.code,
+                'message': error.name
+            }), error.code
     return app

@@ -207,7 +207,7 @@ endpoint
 '''
 
 
-@main.route('/actors/<id>/movies', methods=['POST'])
+@main.route('/actors/<id>/movies', methods=['PATCH'])
 @requires_auth('patch:actors')
 def add_movie_to_actor(payload, id):
     try:

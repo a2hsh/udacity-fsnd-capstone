@@ -21,7 +21,7 @@ endpoint
 '''
 
 
-@main.route('/movies/')
+@main.route('/movies')
 @requires_auth('get:movie-details')
 def get_movies(payload):
     try:
@@ -199,7 +199,7 @@ endpoint
 '''
 
 
-@main.route('/movies/<id>/actors', methods=['POST'])
+@main.route('/movies/<id>/actors', methods=['PATCH'])
 @requires_auth('patch:actors')
 def add_actor_to_movie(payload, id):
     try:
@@ -246,7 +246,7 @@ endpoint
 
 @main.route('/movies/<id>/actors', methods=['DELETE'])
 @requires_auth('patch:movies')
-def delete_actor_to_movie(payload, id):
+def delete_actor_from_movie(payload, id):
     try:
         movie = Movie.query.get(id)
         if movie is None:
