@@ -14,7 +14,7 @@
         if (fragment[0] === 'access_token') {
             // redirect to the token URL, with access_token as a parameter
             let token = fragment[1];
-            location.href = `http://localhost:5000/token?access_token=${token}`
+            location.href = `${window.location.protocol}/token?access_token=${token}`
         }
     </script>
 </body>
